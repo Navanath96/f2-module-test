@@ -1,125 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>F2 Module Test</title>
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+   <body onload="fetchData()">
+      <header>
+         <h1>Student Portal</h1>
+      </header>
+      <section class="controls">
+         <form action="" onsubmit="searchUser(event)">
+            <input
+               type="text"
+               name="search"
+               id="searchBar"
+               placeholder="Search"
+            />
+            <input type="submit" id="submit" value="Search" />
+         </form>
+         <div class="chips-container">
+            <button class="chips" onclick="sortAsc(event)">Sort A->Z</button
+            ><button class="chips" onclick="sortDsc(event)">Sort Z->A</button
+            ><button class="chips" onclick="sortMarks(event)">
+               Sort By Marks</button
+            ><button class="chips" onclick="sortPass(event)">
+               Sort By Passing</button
+            ><button class="chips" onclick="sortClass(event)">
+               Sort By Class</button
+            ><button class="chips" onclick="sortGender()">
+               Sort By Gender
+            </button>
+         </div>
+      </section>
 
-* {
-   box-sizing: border-box;
-}
+      <section id="normieTable">
+         <table id="table">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th class="name">Name</th>
+                  <th>Gender</th>
+                  <th>Class</th>
+                  <th>Marks</th>
+                  <th>Passing</th>
+                  <th>Email</th>
+               </tr>
+            </thead>
+            <tbody id="tableBody">
+            
+            </tbody>
+         </table>
+      </section>
 
-body {
-   font-family: "Inter", sans-serif;
-   font-weight: 400;
-   margin: 0;
-   padding: 0;
-   background: #cdcdcd;
-}
+      <section id="genderTable">
+         <table id="femaleTable">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th class="name">Name</th>
+                  <th>Gender</th>
+                  <th>Class</th>
+                  <th>Marks</th>
+                  <th>Passing</th>
+                  <th>Email</th>
+               </tr>
+            </thead>
+            <tbody id="femaleTableBody"></tbody>
+         </table>
+         <table id="maleTable">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th class="name">Name</th>
+                  <th>Gender</th>
+                  <th>Class</th>
+                  <th>Marks</th>
+                  <th>Passing</th>
+                  <th>Email</th>
+               </tr>
+            </thead>
+            <tbody id="maleTableBody"></tbody>
+         </table>
+      </section>
 
-h1 {
-   margin: 0;
-   padding: 0.5em;
-}
-
-header {
-   max-width: 1500px;
-   margin: 0 auto;
-   /* border: 1px solid red; */
-   background-color: black;
-   color: white;
-}
-
-section {
-   max-width: 1500px;
-   margin: 0 auto;
-   padding: 0.75em;
-   /* border: 1px solid red; */
-}
-
-section form {
-   display: flex;
-   gap: 1em;
-   margin-bottom: 1em;
-
-   /* border: 1px solid yellow; */
-}
-
-form input {
-   border: 1px solid black;
-   padding: 0.5em;
-   font-size: 24px;
-}
-
-#searchBar {
-   flex-grow: 2;
-}
-
-#submit {
-   flex-grow: 0.5;
-   background-color: black;
-   color: white;
-   font-size: 24px;
-   border: none;
-}
-
-form input:focus {
-   outline: none;
-}
-
-/* Chips */
-
-.chips-container {
-   display: flex;
-   justify-content: space-between;
-}
-
-.chips {
-   background-color: black;
-   color: white;
-   font-size: 20px;
-   border: none;
-   padding: 0.5em 1em;
-}
-
-.chips:focus {
-   background-color: white;
-   color: black;
-}
-
-/* Table */
-
-table {
-   width: 100%;
-   text-align: center;
-   border-collapse: collapse;
-}
-
-tr th {
-   padding: 1em 0.5em;
-   font-size: 24px;
-   border: 1px solid black;
-}
-
-table td {
-   border: 1px solid black;
-}
-
-.name {
-   text-align: left;
-}
-
-.nameTab {
-   display: flex;
-   align-items: center;
-   gap: 2em;
-   font-size: 1.2rem;
-}
-
-.icon {
-   border-radius: 50%;
-   border: 1px solid black;
-}
-
-#genderTable {
-   flex-direction: column;
-}
-
-#genderTable table {
-   margin-bottom: 30px;
-}
+      <script src="./script.js"></script>
+   </body>
+</html>
